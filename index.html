@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sinh kế Đầu bạc — EFCARE</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f6f1;--ink:#1f2433;--mut:#5d667a;--line:#e5ded1;--gold:#a8741a;--gold2:#d4a24c;--sil:#6b7a90;--teal:#0f766e;--rose:#be4b5b;--navy:#1d2a44;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px}
+.w{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.hero{background:radial-gradient(1100px 520px at 85% -10%,#8a6a2e 0%,#2a2f42 55%,#1d2a44 100%);color:#fff;padding:64px 0 54px}
+.hero .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#f1d79e;font-weight:700}
+.hero h1{font-family:'Lora',Georgia,serif;font-size:clamp(34px,5.4vw,60px);line-height:1.08;margin:12px 0 14px;font-weight:600}
+.hero h1 em{color:#f1d79e;font-style:italic}
+.hero p.lead{font-size:clamp(16px,1.7vw,20px);color:#e2e6ef;max-width:800px}
+.quote{margin-top:20px;font-family:'Lora',serif;font-style:italic;font-size:19px;color:#f1d79e}
+.cta{display:inline-block;margin-top:22px;background:#f1d79e;color:#3b2a00;font-weight:800;border-radius:99px;padding:13px 22px;text-decoration:none;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:30px}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px 18px}
+.stat b{display:block;font-size:28px;font-weight:800;line-height:1.1}.stat span{font-size:13.5px;color:#d4dae6}
+.sup{color:#a8741a;text-decoration:none;font-size:12px}.hero .sup{color:#f1d79e}
+nav.top{position:sticky;top:0;z-index:5;background:rgba(248,246,241,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav.top a{display:inline-block;padding:12px 13px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent}
+nav.top a:hover{color:var(--gold);border-color:var(--gold)}
+section.s{padding:56px 0 18px}
+.k2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:800}
+h2{font-family:'Lora',Georgia,serif;font-size:clamp(26px,3.3vw,38px);line-height:1.18;margin:6px 0 10px;font-weight:600}
+.intro{color:var(--mut);font-size:17px;max-width:840px;margin-bottom:22px}
+.g{display:grid;gap:16px}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 2px 14px rgba(30,40,60,.05)}
+.card h3{font-size:17px;margin-bottom:6px;line-height:1.35}.card p,.card li{font-size:15px;color:#3b4457}.card ul{padding-left:18px;margin-top:6px}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;margin:0 6px 6px 0}
+.t1{background:#d8f1ec;color:var(--teal)}.t2{background:#f6e7c8;color:var(--gold)}.t3{background:#f7dde1;color:var(--rose)}.t4{background:#e4e9f1;color:var(--sil)}
+.pull{font-family:'Lora',serif;font-size:clamp(20px,2.4vw,26px);line-height:1.4;color:var(--navy);border-left:4px solid var(--gold);padding:6px 0 6px 18px;margin:18px 0;max-width:880px}
+/* hub diagram */
+.hub{display:grid;grid-template-columns:1fr minmax(220px,300px) 1fr;gap:14px;align-items:center}
+@media(max-width:860px){.hub{grid-template-columns:1fr}}
+.core{background:linear-gradient(160deg,#1d2a44,#2c3e5f);color:#fff;border-radius:22px;padding:22px;text-align:center}
+.core b{font-size:18px;display:block;margin-bottom:6px}.core p{font-size:14px;color:#d4dae6}
+.core .pill{display:inline-block;background:rgba(255,255,255,.12);border-radius:99px;padding:4px 10px;font-size:12px;margin:3px}
+.flow{display:grid;gap:10px}
+.fl{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start;cursor:pointer;transition:.15s}
+.fl:hover,.fl.on{border-color:var(--gold);box-shadow:0 4px 14px rgba(168,116,26,.15)}
+.fl i{font-style:normal;font-weight:800;min-width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.fl b{font-size:15px;display:block;line-height:1.3}.fl small{color:var(--mut);font-size:13px}
+.fdet{margin-top:16px}
+/* ideas table */
+table{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+th{background:#f2ece0;text-align:left;padding:11px 12px;font-size:13px;color:#3a3324}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;color:#333c4f}
+.tbl{overflow-x:auto}
+.dots i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#e0d6c3;margin-right:3px}.dots i.on{background:var(--gold)}
+/* cases */
+.case{cursor:pointer}.case .more{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}.case.open .more{display:block}
+.case .hint{font-size:12.5px;color:var(--gold);font-weight:700;margin-top:6px}.case.open .hint{display:none}
+.ls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ls div{background:#f6f1e6;border-radius:12px;padding:10px 12px;font-size:14px}.ls b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+@media(max-width:640px){.ls{grid-template-columns:1fr}}
+/* quiz */
+.quiz{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:900px){.quiz{grid-template-columns:1fr}}
+.q{margin-bottom:14px}.q p{font-weight:700;font-size:15px;margin-bottom:6px}
+.ch{display:flex;gap:6px;flex-wrap:wrap}
+.ch button{border:2px solid var(--line);background:#fff;border-radius:99px;padding:8px 13px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;color:var(--ink)}
+.ch button.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.persona{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.persona button{border:1px dashed var(--gold);background:#fffaf0;border-radius:12px;padding:8px 12px;font:inherit;font-size:13.5px;cursor:pointer;color:#5a3d0b;font-weight:600}
+.res .r{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;border-left:6px solid var(--gold)}
+.res .r h4{font-size:17px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.res .r p{font-size:14.5px;color:#3b4457;margin-top:4px}
+.score{font-size:12px;font-weight:800;background:#f6e7c8;color:#7a5410;border-radius:99px;padding:3px 10px;white-space:nowrap}
+.stage{font-size:12px;font-weight:700;border-radius:8px;padding:2px 8px}
+.st-run{background:#d8f1ec;color:var(--teal)}.st-next{background:#e4e9f1;color:var(--sil)}
+.wall{background:#1d2a44;color:#fff;border-radius:22px;padding:26px}
+.wall h3{font-size:19px;margin-bottom:10px}.wall li{color:#dbe2ee;margin:6px 0 6px 18px;font-size:15.5px}
+.sources li{font-size:13.5px;margin:6px 0 6px 18px;color:#3b4457;word-break:break-word}.sources a{color:var(--gold)}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+footer{padding:40px 0 60px;color:var(--mut);font-size:13px;text-align:center}
+@media print{nav.top{display:none}.case .more{display:block}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="w">
+ <div class="k">EFCARE · Dự án Sinh kế Đầu bạc · 11/2026</div>
+ <h1>Sinh kế <em>Đầu bạc</em><br>Kinh nghiệm cả đời thành thu nhập và niềm vui sống</h1>
+ <p class="lead">Một nền tảng giúp người từ 55 tuổi có việc làm có trả công phù hợp sức khỏe và kinh nghiệm: chăm sóc, cố vấn, làm coach, ghi ký ức cho người cùng thế hệ, trồng vườn nam dược, kể chuyện, truyền nghề. Mỗi việc đều có người trả tiền rõ ràng, giữ phẩm giá, không ép chỉ tiêu.</p>
+ <p class="quote">"Vừa giúp mình, vừa giúp người."</p>
+ <a class="cta" href="#timviec">▶ Tìm sinh kế phù hợp trong 30 giây</a>
+ <div class="stats">
+  <div class="stat"><b>14,2 triệu</b><span>người Việt từ 60 tuổi năm 2024; dự báo 20,9 triệu năm 2034 <a class="sup" href="#nguon">[1]</a></span></div>
+  <div class="stat"><b>62 · 60</b><span>tuổi nghỉ hưu của nam (2028) và nữ (2035) theo Bộ luật Lao động 2019 <a class="sup" href="#nguon">[2]</a></span></div>
+  <div class="stat"><b>9.000+</b><span>Câu lạc bộ Liên thế hệ Tự giúp nhau ở 63 tỉnh thành, có hoạt động phát triển sinh kế <a class="sup" href="#nguon">[3]</a></span></div>
+  <div class="stat"><b>~200</b><span>người cung cấp, tuổi trung bình 70, của doanh nghiệp lá trang trí Irodori ở Nhật <a class="sup" href="#nguon">[4]</a></span></div>
+ </div>
+</div></header>
+<nav class="top"><div class="w">
+ <a href="#vande">Vấn đề</a><a href="#mohinh">Mô hình</a><a href="#ba">3 chương trình mới</a><a href="#ytuong">Kho ý tưởng</a><a href="#thegioi">Thế giới và Việt Nam</a><a href="#timviec">Tìm sinh kế</a><a href="#nguyentac">Nguyên tắc</a><a href="#lotrinh">Lộ trình</a><a href="#nguon">Nguồn</a>
+</div></nav>
+<section class="s" id="vande"><div class="w">
+ <div class="k2">1 · Vấn đề</div>
+ <h2>Người đầu bạc có kinh nghiệm, có thời gian, nhưng thiếu cách biến chúng thành thu nhập</h2>
+ <div class="g g3">
+  <div class="card"><span class="tag t2">Thu nhập</span><h3>Nhiều người vẫn cần và muốn kiếm tiền</h3><p>Tuổi nghỉ hưu tăng dần, nhưng sau nghỉ hưu nhiều người vẫn muốn tự chủ tài chính, không muốn phụ thuộc con cái.</p></div>
+  <div class="card"><span class="tag t4">Chất lượng việc</span><h3>Có việc chưa chắc là việc tốt</h3><p>Ở Hàn Quốc, tỷ lệ người 65+ đi làm cao nhất OECD, nhưng khoảng một phần ba là việc đơn giản, chất lượng thấp <a class="sup" href="#nguon">[9]</a>. Việt Nam cần tránh đi vào lối đó.</p></div>
+  <div class="card"><span class="tag t3">Ý nghĩa sống</span><h3>Mất vai trò sau khi nghỉ hưu</h3><p>Kinh nghiệm cả đời (nghề y, quản lý, dạy học, làm vườn, nấu ăn, thủ công) bị bỏ phí. Ở Nhật, đây gọi là "ikigai": lý do để sống <a class="sup" href="#nguon">[5]</a>.</p></div>
+ </div>
+ <p class="pull">Đích của dự án: tạo sinh kế thật cho người đầu bạc, bằng việc có người trả tiền, hợp sức khỏe, và làm họ thấy mình có ích.</p>
+</div></section>
+
+<section class="s" id="mohinh"><div class="w">
+ <div class="k2">2 · Mô hình</div>
+ <h2>Một nền tảng, nhiều dòng sinh kế</h2>
+ <p class="intro">Ý tưởng sàn giao dịch năng lực cộng đồng (EF-Skill Exchange) đã có trong định hướng hệ sinh thái An sinh Liên thế hệ của EFCARE <a class="sup" href="#nguon">[13]</a>. Dự án này hiện thực hóa nó trên nền dữ liệu EF-Data. Bấm vào từng dòng để xem ai làm, ai trả tiền.</p>
+ <div class="hub">
+  <div class="flow" id="flL"></div>
+  <div class="core"><b>Nền Sinh kế Đầu bạc</b><p>Hồ sơ năng lực · ghép việc · xác nhận và đánh giá · sổ giao dịch</p><div><span class="pill">EF-Data</span><span class="pill">Học viện EFCARE</span><span class="pill">FaCare Life</span><span class="pill">Đối tác thu mua</span><span class="pill">CLB Liên thế hệ</span></div><p style="margin-top:10px;font-size:12.5px;color:#f1d79e">Việc có trả công. Tách hẳn khỏi Giờ Tử Tế (tình nguyện).</p></div>
+  <div class="flow" id="flR"></div>
+ </div>
+ <div class="card fdet" id="fdet"></div>
+</div></section>
+
+<section class="s" id="ba"><div class="w">
+ <div class="k2">3 · Ba chương trình mới</div>
+ <h2>Ký ức số · Vườn nam dược Mộc Tâm · Học viện đào tạo coach</h2>
+ <div class="g g3">
+  <div class="card"><span class="tag t2">Dành cho người già</span><h3>Ký ức số: người đầu bạc ghi ký ức cho người đầu bạc</h3>
+   <p>Gia đình đặt làm cuốn ký ức số cho ông bà: câu chuyện đời, nghề cũ, món ăn quê, bài học sống, kèm ảnh và giọng nói. Người ghi là người đầu bạc đã được Học viện đào tạo: cùng thế hệ nên dễ mở lòng, hiểu ngôn ngữ, hiểu ký ức.</p>
+   <ul><li><b>Ai trả:</b> con cháu.</li><li><b>Sinh kế:</b> người phỏng vấn, người biên tập (55+).</li><li><b>Đi cùng:</b> phần "Ký ức an lành" trong Đề án Mộc Tâm <a class="sup" href="#nguon">[14]</a>; Xưởng AI của EF-Media dựng phim, sách.</li><li><b>Ranh giới:</b> ảnh, giọng nói là dữ liệu riêng tư; chủ nhân ký ức và gia đình quyết định ai được xem.</li></ul></div>
+  <div class="card"><span class="tag t1">Vui vẻ, hữu ích</span><h3>Vườn nam dược Mộc Tâm: trồng cây thuốc nam trong nhà</h3>
+   <p>Công cụ nhập thông số nhà (ánh sáng, diện tích, hướng, khí hậu, thời gian chăm) để gợi ý cây nam dược dễ trồng, kèm cách chăm, cách dùng trong bếp, trong sinh hoạt. Tham khảo kho tri thức nam dược (Tuệ Tĩnh với tinh thần "thuốc Nam chữa người Nam"; "Những cây thuốc và vị thuốc Việt Nam" của GS Đỗ Tất Lợi) mang tính tư vấn, <b>không nói đến bệnh</b>.</p>
+   <ul><li><b>Sinh kế bước 1:</b> người đầu bạc làm "người hướng dẫn vườn" có trả công; bán cây giống từ Serene Seeds (48 loại dược liệu, rau, thảo mộc) <a class="sup" href="#nguon">[15]</a>.</li><li><b>Sinh kế bước 2:</b> khi đủ sản lượng, hợp tác doanh nghiệp sản xuất để thu mua. Mô hình tham khảo: vùng trồng GACP-WHO của Traphaco liên kết nông dân, cấp giống, hỗ trợ kỹ thuật, bao tiêu <a class="sup" href="#nguon">[12]</a>; doanh nghiệp lá Irodori của người cao tuổi ở Nhật <a class="sup" href="#nguon">[4]</a>.</li><li><b>Ranh giới:</b> không gợi ý theo bệnh; thu mua làm dược liệu cần đạt chuẩn của bên mua.</li></ul></div>
+  <div class="card"><span class="tag t4">Hợp với kinh nghiệm sống</span><h3>Học viện EFCARE đào tạo Holistic Health Coach</h3>
+   <p>Ở tuổi đầu bạc, coach là nghề hợp nhất với vốn sống: biết lắng nghe, biết đặt câu hỏi, đã đi qua nhiều biến cố. Học coach giúp chính mình sống khỏe, rồi đồng hành cùng người khác.</p>
+   <ul><li><b>Ai trả:</b> khách hàng của coach; doanh nghiệp, cộng đồng thuê buổi đồng hành.</li><li><b>Sinh kế:</b> coach tốt nghiệp mở "Ô" mang tên mình trên nền EF-Data, nhận khách qua Sàn.</li><li><b>Chứng chỉ:</b> do trường đối tác cấp, khớp đề xuất gói đào tạo có chứng chỉ (họp 27/10).</li><li><b>Ranh giới:</b> coach không chẩn đoán, không tư vấn y khoa.</li></ul></div>
+ </div>
+</div></section>
+
+<section class="s" id="ytuong"><div class="w">
+ <div class="k2">4 · Kho ý tưởng sinh kế</div>
+ <h2>Mười hai ý tưởng, gom từ thư viện EFCARE và các mô hình thế giới</h2>
+ <p class="intro">Chấm theo bốn tiêu chí: hợp sức khỏe người đầu bạc, ai trả tiền rõ đến đâu, vốn ban đầu thấp, khớp với hệ sinh thái EFCARE. Điểm là đánh giá ban đầu để thảo luận.</p>
+ <div class="tbl"><table>
+  <tr><th>Ý tưởng</th><th>Ai trả tiền</th><th>Nguồn ý tưởng</th><th>Sức khỏe</th><th>Tiền rõ</th><th>Vốn thấp</th><th>Khớp EFCARE</th></tr>
+  <tbody id="ideas"></tbody>
+ </table></div>
+ <p class="note">Giá tham khảo một số dịch vụ đã có trong chính sách giá EFCARE (05/08/2026): Người Bạn Tuổi Già 100–300 nghìn/60 phút; Ông Bà Kể Chuyện 300 nghìn–1,5 triệu/lớp nhỏ; truyền nghề thủ công 200 nghìn–1 triệu/buổi; cố vấn kinh nghiệm sống 300 nghìn–2 triệu/buổi; người cung cấp giữ tối thiểu 70–85% giá trị dịch vụ <a class="sup" href="#nguon">[13]</a>. Trong 60 ngày thí điểm, EFCARE thu 0%.</p>
+</div></section>
+<section class="s" id="thegioi"><div class="w">
+ <div class="k2">5 · Thế giới và Việt Nam đã làm</div>
+ <h2>Tám mô hình sinh kế cho người cao tuổi, kèm bài học và điều cẩn trọng</h2>
+ <p class="intro">Bấm vào từng thẻ để xem chi tiết. Số liệu chỉ dùng khi có nguồn công khai.</p>
+ <div class="g g2" id="cases"></div>
+</div></section>
+
+<section class="s" id="timviec"><div class="w">
+ <div class="k2">6 · Trải nghiệm</div>
+ <h2>Tìm sinh kế phù hợp trong 30 giây</h2>
+ <p class="intro">Trả lời sáu câu, hoặc chọn một nhân vật mẫu. Công cụ gợi ý ba dòng sinh kế hợp nhất và bước bắt đầu. Bản demo chạy trong trình duyệt, không gửi dữ liệu đi đâu.</p>
+ <div class="persona" id="persona"></div>
+ <div class="quiz"><div class="card" id="qbox"></div><div class="res" id="res"><div class="card"><p style="color:#5d667a">Chọn câu trả lời ở bên trái để xem gợi ý.</p></div></div></div>
+</div></section>
+
+<section class="s" id="nguyentac"><div class="w">
+ <div class="k2">7 · Nguyên tắc</div>
+ <h2>Sáu nguyên tắc giữ cho sinh kế bền và tử tế</h2>
+ <div class="wall"><ul>
+  <li><b>Có người trả tiền rõ ràng.</b> Giao dịch thật là khi bên nhận xác nhận xong việc và đã trả tiền.</li>
+  <li><b>Giữ phẩm giá.</b> Có giá sàn cho việc cộng đồng; người làm giữ phần lớn giá trị dịch vụ; không ép chỉ tiêu.</li>
+  <li><b>Tách hẳn với Giờ Tử Tế.</b> Việc tình nguyện ghi Giờ Tử Tế; việc có trả công đi qua Sàn. Với việc đồng hành, trò chuyện ("Người Bạn Tuổi Già"), <b>người làm tự chọn mỗi lần</b>: thu phí qua Sàn, hoặc ghi Giờ Tử Tế. Một lần chỉ chọn một, không bao giờ cả hai.</li>
+  <li><b>Không nói đến bệnh.</b> Vườn nam dược, coach, ký ức số đều mang tính tư vấn, đồng hành, vui và hữu ích. Việc y khoa chuyển cho bác sĩ, điều dưỡng qua FaCare Life.</li>
+  <li><b>Tôn trọng dữ liệu riêng tư.</b> Ký ức, ảnh, giọng nói thuộc về người kể và gia đình. Mỗi mục đích dùng cần đồng ý riêng.</li>
+  <li><b>Sinh kế, không phải gọi vốn.</b> Dự án không nhận góp vốn, không hứa hoàn tiền hay cổ tức cho người tham gia.</li>
+ </ul></div>
+</div></section>
+
+<section class="s" id="lotrinh"><div class="w">
+ <div class="k2">8 · Lộ trình</div>
+ <h2>Đi từng bước, đo bằng giao dịch có trả tiền</h2>
+ <div class="g g3">
+  <div class="card"><span class="tag t1">Đang thí điểm · 01/11–31/12/2026</span><h3>Ba tầng của Sàn năng lực</h3><ul><li>Chăm sóc chuyên nghiệp qua FaCare Life: 10 ca có trả tiền.</li><li>Cố vấn cho doanh nghiệp nhỏ, coach: 3 gói có trả tiền.</li><li>Việc cộng đồng nhẹ ở Cầu Giấy: 20 ca có trả tiền.</li><li>Mỗi tầng có điều kiện dừng ở ngày 30. EFCARE thu 0% để đo nhu cầu thật.</li></ul></div>
+  <div class="card"><span class="tag t2">Sau ngày 60</span><h3>Ba chương trình mới</h3><ul><li>Ký ức số: lớp đào tạo người ghi ký ức, 10 cuốn ký ức đầu tiên.</li><li>Vườn nam dược Mộc Tâm: công cụ gợi ý cây, chuyên gia duyệt danh sách cây.</li><li>Holistic Health Coach: giáo trình, trường đối tác cấp chứng chỉ, lớp đầu tiên.</li></ul><p class="note">Mục tiêu số sẽ đặt khi có kết quả 60 ngày.</p></div>
+  <div class="card"><span class="tag t4">Khi đủ quy mô</span><h3>Thu mua và nhân rộng</h3><ul><li>Hợp đồng thu mua nam dược với doanh nghiệp sản xuất khi sản lượng đủ lớn.</li><li>Nhân rộng qua Câu lạc bộ Liên thế hệ Tự giúp nhau và Hội Người cao tuổi.</li><li>Sản phẩm cộng đồng lên sàn thương mại EF-Shop.</li></ul></div>
+ </div>
+</div></section>
+
+<section class="s" id="nguon"><div class="w">
+ <div class="k2">Nguồn tham khảo</div>
+ <ol class="sources">
+  <li>Tổng cục Thống kê, UNFPA, Dự báo dân số 2024–2074: <a href="https://www.nso.gov.vn/wp-content/uploads/2025/12/ENG-Du-bao-DS_final_final.pdf">nso.gov.vn</a> · <a href="https://news.tuoitre.vn/vietnam-projected-to-enter-aging-society-within-next-decade-103260127171216323.htm">Tuổi Trẻ News</a></li>
+  <li>Bộ luật Lao động 2019: <a href="https://en.baochinhphu.vn/new-labor-code-retirement-age-will-be-increased-to-62-for-men-60-for-women-11136701.htm">Báo Chính phủ</a></li>
+  <li>Câu lạc bộ Liên thế hệ Tự giúp nhau: <a href="https://www.helpage.org/news/new-chapter-for-ageing-in-vietnam/">HelpAge International</a> · <a href="https://www.worldbank.org/en/news/feature/2024/05/28/how-intergenerational-self-help-clubs-transform-elderly-care-in-viet-nam">Ngân hàng Thế giới</a> · <a href="https://social.desa.un.org/sites/default/files/inline-files/09%20Thuy%20Tran%20-Vietnam-%20ISHCs-UNDESA%20-Oct%2023-final1_0.pdf">UN DESA</a></li>
+  <li>Irodori, Kamikatsu: <a href="https://www.oecd.org/stories/local-development/practices/mobilising-the-elderly-for-economic-and-community-development-the-leaf-business-in-kamikatsu-japan-211903e9/">OECD</a> · <a href="https://nippon.com/en/guide-to-japan/gu900259">nippon.com</a> · <a href="https://mopact.sites.sheffield.ac.uk/research-fields/extending-working-lives/innovations/irodori">MOPACT, Đại học Sheffield</a></li>
+  <li>Trung tâm Nhân lực Bạc, Nhật Bản: <a href="https://www.mhlw.go.jp/english/wp/wp-hw2/part2/p2c7s2.pdf">Bộ Y tế, Lao động và Phúc lợi Nhật</a> · <a href="https://social.un.org/ageing-working-group/documents/eleventh/Inputs%20MS/Japan-Right-to-work.pdf">Liên Hợp Quốc</a> · <a href="https://www.accessible-japan.com/offering-seniors-opportunities-to-work/">Accessible Japan</a></li>
+  <li>Senior Experten Service, Đức: <a href="https://ses-bonn.de/en/experts/our-experts">ses-bonn.de</a></li>
+  <li>Experience Corps: <a href="https://en.wikipedia.org/wiki/Experience_Corps">Wikipedia</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3456143">PMC</a></li>
+  <li>Granny Cloud: <a href="https://www.ted.com/pages/school-in-the-cloud-sugata-mitra">TED</a> · <a href="https://www.ncl.ac.uk/press/articles/archive/2014/03/schoolinthecloudcommunitydigitalplatformlaunched.html">Đại học Newcastle</a></li>
+  <li>Việc làm người cao tuổi ở Hàn Quốc: <a href="https://www.koreajoongangdaily.com/korea/koreas-60s-overtake-20s-in-employment-despite-illfitting-job/12714739">Korea JoongAng Daily</a></li>
+  <li>Men's Sheds, Úc: <a href="https://www.ncver.edu.au/research-and-statistics/publications/all-publications/mens-sheds-in-australia-learning-through-community-contexts">NCVER</a> · <a href="https://researchers.westernsydney.edu.au/en/publications/a-narrative-review-of-mens-sheds-literature-reducing-social-isola/">Western Sydney University</a></li>
+  <li>Encore Fellowships: <a href="https://en.wikipedia.org/wiki/Encore_fellowships">Wikipedia</a></li>
+  <li>Vùng trồng dược liệu GACP-WHO của Traphaco: <a href="https://www.rmit.edu.vn/vi/gioi-thieu-chung/ve-chung-toi/cam-ket-cua-rmit/cam-ket-hanh-dong-cua-dai-hoc-rmit-tai-viet-nam/quy-doi-moi-chien-luoc/nen-tang-so-ve-giao-duc-vi-phat-trien-ben-vung/case-studies/du-an-traphao-greenplan">RMIT Việt Nam</a> · <a href="https://tapchicongthuong.vn/traphaco-cnc--chung-nhan-thanh-cong-vung-trong-duoc-lieu-cuc-hoa-vang-dat-chuan-gacp--who-120023.htm">Tạp chí Công Thương</a> · <a href="https://vneconomy.vn/chuoi-gia-tri-xanh-cua-traphaco.htm">VnEconomy</a></li>
+  <li>Tài liệu nội bộ EFCARE: Hệ sinh thái dịch vụ EFCARE An sinh Liên thế hệ (05/08/2026); Hoàn thiện chính sách giá EFCARE (05/08/2026), nhóm EF-Skill Exchange.</li>
+  <li>Tài liệu nội bộ EFCARE: Đề án triển khai Mộc Tâm Liệu pháp, cấu phần "Ký ức an lành".</li>
+  <li>Tài liệu nội bộ EFCARE: Kế hoạch kinh doanh Serene Seeds (danh mục 48 loại hạt giống dược liệu, hoa, rau, thảo mộc).</li>
+ </ol>
+</div></section>
+<footer>EFCARE · Sinh kế Đầu bạc · Tài liệu trao đổi với đối tác.</footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var FL={
+ A:{c:'#0f766e',n:'Chăm sóc chuyên nghiệp',s:'Điều dưỡng, y tá nghỉ hưu · qua FaCare Life',st:1,d:'<b>Người làm:</b> điều dưỡng, y tá, kỹ thuật viên đã nghỉ hưu, còn chứng chỉ. <b>Ai trả:</b> gia đình, qua dịch vụ của FaCare Life. <b>Việc:</b> chăm sóc tại nhà trong phạm vi chứng chỉ. <b>Giai đoạn:</b> đang thí điểm, Đích 10 ca có trả tiền đến 31/12/2026.'},
+ B:{c:'#2c4a7a',n:'Cố vấn, kèm cặp',s:'Chuyên gia, quản lý nghỉ hưu · doanh nghiệp nhỏ',st:1,d:'<b>Người làm:</b> chuyên gia tài chính, bán hàng, vận hành, nhân sự đã nghỉ hưu. <b>Ai trả:</b> doanh nghiệp nhỏ, coach. <b>Việc:</b> gói cố vấn ngắn theo đề bài cụ thể, học cách ghép theo đề bài của Senior Experten Service (Đức). <b>Giai đoạn:</b> đang thí điểm, Đích 3 gói có trả tiền.'},
+ C:{c:'#a8741a',n:'Việc cộng đồng nhẹ',s:'Người 55–70 khỏe mạnh · Cầu Giấy',st:1,d:'<b>Người làm:</b> người 55–70 khỏe mạnh trong khu dân cư. <b>Ai trả:</b> hộ gia đình, ban quản lý chung cư. <b>Việc:</b> việc nhà nhẹ, chăm cây, hỗ trợ sự kiện khu dân cư, hướng dẫn công nghệ. Học từ Trung tâm Nhân lực Bạc của Nhật. <b>Giai đoạn:</b> đang thí điểm ở Cầu Giấy, Đích 20 ca, có giá sàn mỗi giờ.'},
+ H:{c:'#6b7a90',n:'Holistic Health Coach',s:'Học viện đào tạo · mở Ô của mình',st:0,d:'<b>Người làm:</b> người đầu bạc học coach tại Học viện EFCARE, chứng chỉ do trường đối tác cấp. <b>Ai trả:</b> khách hàng, doanh nghiệp, cộng đồng thuê buổi đồng hành. <b>Vì sao hợp:</b> coach dựa vào lắng nghe và vốn sống, đúng thế mạnh của tuổi này. <b>Giai đoạn:</b> sau ngày 60.'},
+ K:{c:'#be4b5b',n:'Ký ức số',s:'Người đầu bạc ghi ký ức cho người đầu bạc',st:0,d:'<b>Người làm:</b> người phỏng vấn, người biên tập 55+ được đào tạo. <b>Ai trả:</b> con cháu đặt làm cho ông bà. <b>Việc:</b> ghi câu chuyện đời, nghề cũ, món ăn quê, kèm ảnh, giọng nói; Xưởng AI dựng phim, sách. <b>Giai đoạn:</b> sau ngày 60.'},
+ V:{c:'#3f7d3a',n:'Vườn nam dược Mộc Tâm',s:'Hướng dẫn vườn · rồi trồng theo hợp đồng thu mua',st:0,d:'<b>Bước 1:</b> người đầu bạc làm người hướng dẫn vườn có trả công, bán cây giống Serene Seeds. <b>Bước 2:</b> khi đủ sản lượng, ký hợp đồng thu mua với doanh nghiệp sản xuất (tham khảo vùng trồng GACP-WHO của Traphaco). <b>Ranh giới:</b> không nói đến bệnh. <b>Giai đoạn:</b> sau ngày 60.'},
+ O:{c:'#7c4dbb',n:'Ông bà kể chuyện, truyền nghề',s:'Dạy kèm, kể chuyện, lớp kỹ năng sống',st:0,d:'<b>Người làm:</b> giáo viên nghỉ hưu, nghệ nhân, người khéo tay. <b>Ai trả:</b> phụ huynh, trường học, doanh nghiệp. <b>Việc:</b> kể chuyện, dạy kèm trực tuyến (học từ Granny Cloud), truyền nghề thủ công, lớp kỹ năng sống liên thế hệ. Đã có giá tham khảo trong chính sách giá EFCARE. <b>Giai đoạn:</b> ý tưởng.'},
+ T:{c:'#8a5a16',n:'Sản xuất cộng đồng',s:'Thủ công, món quê · bán qua EF-Shop',st:0,d:'<b>Người làm:</b> người khéo tay, nấu ăn giỏi. <b>Ai trả:</b> người mua trên sàn thương mại EF-Shop. <b>Việc:</b> đồ thủ công, đặc sản quê, sản phẩm từ vườn nam dược. <b>Giai đoạn:</b> ý tưởng, cần chuẩn an toàn thực phẩm.'}
+};
+function flHtml(k){var f=FL[k];return '<div class="fl" data-k="'+k+'"><i style="background:'+f.c+'">'+k+'</i><div><b>'+esc(f.n)+'</b><small>'+esc(f.s)+'</small><br><span class="stage '+(f.st?'st-run':'st-next')+'">'+(f.st?'Đang thí điểm':'Sau ngày 60 · ý tưởng')+'</span></div></div>'}
+$('flL').innerHTML=['A','B','C','H'].map(flHtml).join('');$('flR').innerHTML=['K','V','O','T'].map(flHtml).join('');
+function setF(k){[].forEach.call(document.querySelectorAll('.fl'),function(e){e.classList.toggle('on',e.dataset.k===k)});var f=FL[k];$('fdet').innerHTML='<h3 style="color:'+f.c+'">'+esc(f.n)+'</h3><p>'+f.d+'</p>'}
+[].forEach.call(document.querySelectorAll('.fl'),function(e){e.onclick=function(){setF(e.dataset.k)}});setF('A');
+var ID=[['Chăm sóc chuyên nghiệp qua FaCare Life','Gia đình','Tầng A của Sàn',2,3,3,3],['Cố vấn cho doanh nghiệp nhỏ','Doanh nghiệp nhỏ, coach','Senior Experten Service (Đức), Encore (Mỹ)',3,2,3,3],['Việc cộng đồng nhẹ','Hộ gia đình, ban quản lý','Trung tâm Nhân lực Bạc (Nhật)',2,3,3,2],['Holistic Health Coach','Khách của coach','Học viện EFCARE',3,2,2,3],['Ký ức số do người đầu bạc ghi','Con cháu','Đề án Mộc Tâm, EF-Media',3,3,3,3],['Người hướng dẫn vườn nam dược','Hộ gia đình','Serene Seeds, Mộc Tâm',3,2,3,3],['Trồng nam dược theo hợp đồng thu mua','Doanh nghiệp sản xuất','Traphaco GreenPlan, Irodori (Nhật)',2,3,2,2],['Ông bà kể chuyện, dạy kèm trực tuyến','Phụ huynh, trường học','Granny Cloud, Experience Corps, chính sách giá EFCARE',3,2,3,2],['Truyền nghề, lớp kỹ năng sống liên thế hệ','Học viên, trường, doanh nghiệp','Chính sách giá EFCARE',3,2,3,2],['Sản xuất cộng đồng bán qua EF-Shop','Người mua','Hệ sinh thái An sinh EFCARE',3,2,2,2],['Hỗ trợ công nghệ: người đầu bạc dạy người đầu bạc','Gia đình, câu lạc bộ','Ý tưởng mới',3,2,3,2],['Xưởng sửa chữa chung','Hộ gia đình','Men\'s Sheds (Úc)',2,2,2,1]];
+function dots(n){var h='<span class="dots">';for(var i=1;i<=3;i++)h+='<i class="'+(i<=n?'on':'')+'"></i>';return h+'</span>'}
+$('ideas').innerHTML=ID.map(function(r){return '<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td><td>'+dots(r[3])+'</td><td>'+dots(r[4])+'</td><td>'+dots(r[5])+'</td><td>'+dots(r[6])+'</td></tr>'}).join('');
+var CS=[['Từ thập niên 1980 · Kamikatsu, Nhật Bản','Irodori: lá trang trí do người cao tuổi trồng và bán','Khoảng 200 người cung cấp, tuổi trung bình 70, phần lớn là phụ nữ; dùng máy tính bảng xem đơn của nhà hàng và tự nhận đơn. Doanh nghiệp được mô tả có doanh thu khoảng 260 triệu yên mỗi năm [4].','Một sản phẩm nhỏ của vườn nhà (lá) thành sinh kế khi có người mua và công cụ số đơn giản. Rất gần với vườn nam dược.','Năm thành lập không thống nhất giữa các nguồn; thu nhập cao chỉ ở một số người.'],
+['1975 · Nhật Bản','Trung tâm Nhân lực Bạc','Hình mẫu từ Tokyo 1975, luật hóa 1986; hơn 1.300 điểm; khoảng 698.000 thành viên cuối năm tài chính 2020; việc nhẹ, ngắn hạn [5].','Mạng lưới địa phương, việc vừa sức, nhân rộng được.','Bị phê bình lệch khỏi mục đích "ikigai" để thành nơi kiếm thu nhập thấp [5].'],
+['Đức','Senior Experten Service','Hơn 13.000 chuyên gia nghỉ hưu, hơn 60.000 nhiệm vụ tư vấn ở 170 nước (theo SES) [6].','Ghép chuyên gia theo đề bài cụ thể của doanh nghiệp.','Là tình nguyện, không phải nguồn thu nhập của chuyên gia.'],
+['Hoa Kỳ','Experience Corps: người 50+ dạy kèm đọc cho học sinh','Nghiên cứu ghi nhận người tham gia cải thiện sức khỏe thể chất và tinh thần; trẻ được kèm tiến bộ về đọc [7].','Người cao tuổi làm việc với trẻ em tạo lợi ích hai chiều.','Nhiều số liệu là tự báo cáo; nghiên cứu nhỏ.'],
+['2009 · Anh và Ấn Độ','Granny Cloud: giáo viên nghỉ hưu kèm trẻ qua mạng','Năm 2009 có hơn 200 giáo viên nghỉ hưu ở Anh tình nguyện trong hai tuần đầu; từ kể chuyện chuyển sang kèm học [8].','Làm từ xa, hợp người đi lại khó.','Mô hình gốc là tình nguyện; phiên bản có trả công cần người trả rõ.'],
+['Úc','Men\'s Sheds: xưởng chung cho nam giới lớn tuổi','Nghiên cứu ghi nhận lợi ích về sức khỏe, hạnh phúc cho người tham gia và gia đình [10].','Không gian làm việc chung giảm cô lập, đặc biệt với nam giới.','Bằng chứng chủ yếu tự báo cáo; ít yếu tố thu nhập.'],
+['Việt Nam','Câu lạc bộ Liên thế hệ Tự giúp nhau','Hơn 9.000 câu lạc bộ ở 63 tỉnh thành, có hoạt động sức khỏe, học tập, phát triển sinh kế nhỏ; kế hoạch quốc gia (08/2025) thêm 12.000 câu lạc bộ đến 2035 [3].','Kênh có sẵn để gặp người đầu bạc và nhân rộng ở cơ sở.','Mức "khá giả hơn" là số tự báo cáo của thành viên.'],
+['2009 · Việt Nam','Traphaco GreenPlan: vùng trồng dược liệu liên kết nông dân','Cấp giống, hỗ trợ kỹ thuật theo GACP-WHO và thu mua; nhiều vùng trồng đạt chuẩn, ví dụ đinh lăng ở Nam Định [12].','Mô hình bao tiêu cho vườn nam dược khi đủ sản lượng.','Chuẩn dược liệu khắt khe; vườn nhà nhỏ lẻ khó đạt nếu không gom thành vùng.']];
+$('cases').innerHTML=CS.map(function(c){return '<div class="card case"><span class="tag t2">'+esc(c[0])+'</span><h3>'+esc(c[1])+'</h3><p>'+esc(c[2])+'</p><div class="more"><div class="ls"><div><b>Bài học</b>'+esc(c[3])+'</div><div><b>Cẩn trọng</b>'+esc(c[4])+'</div></div></div><div class="hint">Bấm để xem bài học ▾</div></div>'}).join('');
+[].forEach.call(document.querySelectorAll('.case'),function(c){c.onclick=function(){c.classList.toggle('open')}});
+/* quiz */
+var Q=[['sk','Sức khỏe đi lại',[['tot','Đi lại tốt'],['vua','Vừa phải'],['nha','Chủ yếu ở nhà']]],['ng','Kinh nghiệm chính',[['yte','Y tế, chăm sóc'],['ql','Quản lý, chuyên môn'],['gv','Dạy học'],['kt','Khéo tay, nấu ăn'],['nn','Làm vườn, nông nghiệp'],['kh','Khác']]],['vu','Có vườn hoặc ban công',[['co','Có'],['ko','Không']]],['th','Bạn thích',[['gap','Gặp gỡ, trò chuyện'],['nha','Làm yên tĩnh tại nhà'],['ca','Cả hai']]],['dt','Dùng điện thoại',[['tt','Thành thạo'],['cb','Cơ bản']]],['tg','Thời gian mỗi tuần',[['it','Dưới 5 giờ'],['vua','5–15 giờ'],['nh','Trên 15 giờ']]]];
+var A={};
+var PS=[['Cô Hòa, 62 tuổi, điều dưỡng nghỉ hưu',{sk:'tot',ng:'yte',vu:'ko',th:'gap',dt:'tt',tg:'vua'}],['Chú Bình, 66 tuổi, kế toán trưởng',{sk:'vua',ng:'ql',vu:'ko',th:'ca',dt:'tt',tg:'it'}],['Bà Tư, 70 tuổi, có vườn ở quê',{sk:'nha',ng:'nn',vu:'co',th:'nha',dt:'cb',tg:'vua'}],['Thầy Minh, 68 tuổi, giáo viên',{sk:'vua',ng:'gv',vu:'ko',th:'gap',dt:'cb',tg:'vua'}]];
+$('persona').innerHTML=PS.map(function(p,i){return '<button data-i="'+i+'">'+esc(p[0])+'</button>'}).join('');
+[].forEach.call($('persona').children,function(b){b.onclick=function(){A=JSON.parse(JSON.stringify(PS[b.dataset.i][1]));drawQ();calc()}});
+function drawQ(){$('qbox').innerHTML=Q.map(function(q){return '<div class="q"><p>'+esc(q[1])+'</p><div class="ch" data-k="'+q[0]+'">'+q[2].map(function(o){return '<button data-v="'+o[0]+'" class="'+(A[q[0]]===o[0]?'on':'')+'">'+esc(o[1])+'</button>'}).join('')+'</div></div>'}).join('');
+ [].forEach.call($('qbox').querySelectorAll('.ch'),function(ch){[].forEach.call(ch.children,function(b){b.onclick=function(){A[ch.dataset.k]=b.dataset.v;drawQ();calc()}})})}
+var P={
+ A:{f:function(a){return (a.ng==='yte'?6:0)+(a.sk==='tot'?2:a.sk==='vua'?1:-6)+(a.th!=='nha'?2:0)+(a.tg==='nh'?1:0)},why:'Kinh nghiệm y tế, chăm sóc là thế mạnh hiếm. Gia đình cần người có chứng chỉ.',go:'Đăng ký trên Sàn, chọn "Chăm sóc chuyên nghiệp", chuẩn bị bản chụp chứng chỉ.'},
+ B:{f:function(a){return (a.ng==='ql'?6:0)+(a.ng==='gv'?1:0)+(a.dt==='tt'?1:0)+1},why:'Doanh nghiệp nhỏ cần kinh nghiệm quản lý, tài chính, bán hàng. Làm được từ xa.',go:'Đăng ký trên Sàn, chọn "Cố vấn, kèm cặp", ghi rõ lĩnh vực.'},
+ H:{f:function(a){return (a.ng==='gv'?3:a.ng==='yte'||a.ng==='ql'?2:1)+(a.th!=='nha'?2:0)+(a.dt==='tt'?1:0)},why:'Coach dựa vào lắng nghe và vốn sống. Học để sống khỏe hơn, rồi đồng hành cùng người khác.',go:'Đăng ký lớp Holistic Health Coach của Học viện khi mở (sau ngày 60).'},
+ C:{f:function(a){return (a.sk==='tot'?3:a.sk==='vua'?1:-5)+(a.th!=='nha'?2:0)+(a.ng==='kt'||a.ng==='nn'?1:0)+(a.tg==='nh'?1:0)},why:'Việc nhẹ trong khu dân cư, gần nhà, có giá sàn mỗi giờ.',go:'Đăng ký trên Sàn, chọn "Việc cộng đồng nhẹ" (đang thí điểm ở Cầu Giấy).'},
+ K:{f:function(a){return (a.th!=='nha'?2:0)+(a.dt==='tt'?2:0)+(a.ng==='gv'?2:0)+(a.sk!=='nha'?1:0)+1},why:'Người cùng thế hệ dễ được mở lòng. Ghi ký ức là món quà gia đình sẵn sàng trả tiền.',go:'Chờ lớp đào tạo người ghi ký ức (sau ngày 60).'},
+ V:{f:function(a){return (a.vu==='co'?4:0)+(a.ng==='nn'?3:0)+(a.th==='nha'?2:0)+(a.sk==='nha'?1:0)},why:'Vườn nhà thành nguồn thu: hướng dẫn vườn, bán cây giống, về sau trồng theo hợp đồng thu mua.',go:'Thử công cụ gợi ý cây nam dược khi ra mắt; đăng ký làm người hướng dẫn vườn.'},
+ O:{f:function(a){return (a.ng==='gv'?4:0)+(a.ng==='kt'?2:0)+(a.th!=='nha'?1:0)+(a.sk==='nha'?1:0)},why:'Kể chuyện, dạy kèm, truyền nghề; làm được trực tuyến từ nhà.',go:'Đăng ký trên Sàn, ghi rõ môn hoặc nghề có thể dạy.'},
+ T:{f:function(a){return (a.ng==='kt'?4:0)+(a.th==='nha'?2:0)+(a.sk==='nha'?1:0)},why:'Đồ thủ công, món quê có người mua khi được giới thiệu đúng.',go:'Ghi danh sản phẩm để đưa lên sàn thương mại khi mở.'}
+};
+function calc(){if(Object.keys(A).length<3){$('res').innerHTML='<div class="card"><p style="color:#5d667a">Trả lời thêm vài câu để xem gợi ý.</p></div>';return}
+ var r=Object.keys(P).map(function(k){return [k,P[k].f(A)]}).sort(function(x,y){return y[1]-x[1]}).slice(0,3);
+ var mx=Math.max(1,r[0][1]);
+ $('res').innerHTML=r.map(function(x,i){var f=FL[x[0]],p=P[x[0]];return '<div class="r" style="border-left-color:'+f.c+'"><h4><span>'+(i+1)+'. '+esc(f.n)+'</span><span class="score">'+Math.max(0,Math.round(x[1]/mx*100))+'% hợp</span></h4><p>'+esc(p.why)+'</p><p><b>Bắt đầu:</b> '+esc(p.go)+'</p><span class="stage '+(f.st?'st-run':'st-next')+'">'+(f.st?'Đang thí điểm':'Sau ngày 60 · ý tưởng')+'</span></div>'}).join('')+'<p class="note">Gợi ý dựa trên quy tắc đơn giản, để định hướng. Điều phối viên sẽ trao đổi kỹ hơn khi bạn đăng ký.</p><a class="cta" style="margin-top:6px" href="2026-10-31-san-nang-luc-demo.html">Thử bản demo Sàn năng lực →</a>'}
+drawQ();
+})();
+</script>
+</body>
+</html>
