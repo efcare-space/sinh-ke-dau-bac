@@ -258,7 +258,7 @@ var P={
 function calc(){if(Object.keys(A).length<3){$('res').innerHTML='<div class="card"><p style="color:#5d667a">Trả lời thêm vài câu để xem gợi ý.</p></div>';return}
  var r=Object.keys(P).map(function(k){return [k,P[k].f(A)]}).sort(function(x,y){return y[1]-x[1]}).slice(0,3);
  var mx=Math.max(1,r[0][1]);
- $('res').innerHTML=r.map(function(x,i){var f=FL[x[0]],p=P[x[0]];return '<div class="r" style="border-left-color:'+f.c+'"><h4><span>'+(i+1)+'. '+esc(f.n)+'</span><span class="score">'+Math.max(0,Math.round(x[1]/mx*100))+'% hợp</span></h4><p>'+esc(p.why)+'</p><p><b>Bắt đầu:</b> '+esc(p.go)+'</p><span class="stage '+(f.st?'st-run':'st-next')+'">'+(f.st?'Đang thí điểm':'Sau ngày 60 · ý tưởng')+'</span></div>'}).join('')+'<p class="note">Gợi ý dựa trên quy tắc đơn giản, để định hướng. Điều phối viên sẽ trao đổi kỹ hơn khi bạn đăng ký.</p><a class="cta" style="margin-top:6px" href="san/">Mở Sàn năng lực →</a>'}
+ $('res').innerHTML=r.map(function(x,i){var f=FL[x[0]],p=P[x[0]];return '<div class="r" style="border-left-color:'+f.c+'"><h4><span>'+(i+1)+'. '+esc(f.n)+'</span><span class="score">'+Math.max(0,Math.round(x[1]/mx*100))+'% hợp</span></h4><p>'+esc(p.why)+'</p><p><b>Bắt đầu:</b> '+esc(p.go)+'</p><span class="stage '+(f.st?'st-run':'st-next')+'">'+(f.st?'Đang thí điểm':'Sau ngày 60 · ý tưởng')+'</span></div>'}).join('')+'<p class="note">Gợi ý dựa trên quy tắc đơn giản, để định hướng. Điều phối viên sẽ trao đổi kỹ hơn khi bạn đăng ký.</p><a class="cta" style="margin-top:6px" href="https://efcare-space.github.io/cong-dong/?mo=dangky&cua=thu_nhap">Mở EFC: nhận việc có thu nhập →</a>'}
 drawQ();
 })();
 </script>
